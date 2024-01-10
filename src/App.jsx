@@ -129,7 +129,10 @@ export const App = () => {
               <a
                 href="#/"
                 data-cy="AllCategories"
-                className="button is-success mr-6 is-outlined"
+                className={classNames(
+                  'button is-success mr-6',
+                  { 'is-outlined': query.category.length !== 0 },
+                )}
                 onClick={() => setQuery(prev => (
                   { ...prev, category: [] }
                 ))}
