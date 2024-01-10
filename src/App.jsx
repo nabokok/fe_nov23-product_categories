@@ -24,10 +24,6 @@ function filteredByUser(query, initialProducts) {
   const { owner, productName, category } = query;
   const normalizeNameQuery = productName.toLowerCase();
 
-  // if (!owner && productName.length === 0 && category.length === 0) {
-  //   return initialProducts;
-  // }
-
   return initialProducts
     .filter(({ user }) => (owner ? user.id === owner : true))
     .filter(({ categoryId }) => (
